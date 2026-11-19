@@ -416,6 +416,13 @@
         <p class="letter__closing">Cheers to another Birthday!! I love you so much, Enya Fung</p>
 
         <p class="letter__signature">Bryan Lai</p>
+
+        <div class="polaroids">
+          <button class="polaroid" type="button" style="--tilt:-4deg"><img src="images/photos/photo-1.jpg" alt="Enya smiling over her birthday dessert" loading="lazy"></button>
+          <button class="polaroid" type="button" style="--tilt:3deg"><img src="images/photos/photo-2.jpg" alt="Enya smiling at dinner" loading="lazy"></button>
+          <button class="polaroid" type="button" style="--tilt:2.5deg"><img src="images/photos/photo-3.jpg" alt="Enya at a dinner date" loading="lazy"></button>
+          <button class="polaroid" type="button" style="--tilt:-3deg"><img src="images/photos/photo-4.jpg" alt="Enya with a birthday candle and dessert" loading="lazy"></button>
+        </div>
         </div>
       </div>
 
@@ -435,6 +442,11 @@
         <use href="#petal-shape" fill="url(#petal)" transform="translate(56 100) rotate(-70) scale(.8)" />
       </svg>
     </div>
+  </div>
+
+  <!-- Enlarged photo -->
+  <div class="photo-view" id="photo-view" aria-hidden="true">
+    <img id="photo-view-img" alt="">
   </div>
 
   <script src="js/letter.js"></script>

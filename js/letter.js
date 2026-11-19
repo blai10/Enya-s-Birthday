@@ -66,7 +66,26 @@
   view.addEventListener('click', (event) => {
     if (event.target === view) hideLetter();
   });
+  // Tap a polaroid to see it bigger; tap anywhere to close.
+  const photoView = document.getElementById('photo-view');
+  const photoImg = document.getElementById('photo-view-img');
+  document.querySelectorAll('.polaroid img').forEach((img) => {
+    img.parentElement.addEventListener('click', () => {
+      photoImg.src = img.src;
+      photoImg.alt = img.alt;
+      photoView.classList.add('is-open');
+      photoView.setAttribute('aria-hidden', 'false');
+    });
+  });
+  const hidePhoto = () => {
+    photoView.classList.remove('is-open');
+    photoView.setAttribute('aria-hidden', 'true');
+  };
+  photoView.addEventListener('click', hidePhoto);
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && view.classList.contains('is-open')) hideLetter();
+    if (event.key !== 'Escape') return;
+    if (photoView.classList.contains('is-open')) hidePhoto();
+    else if (view.classList.contains('is-open')) hideLetter();
   });
 })();
