@@ -7,9 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="css/letter.css">
 
   <!-- Document Title -->
-  <title>FLOWERS</title>
+  <title>For Enya &#9825;</title>
 </head>
 
 <body class="not-loaded">
@@ -316,6 +320,124 @@
 
   <!-- Title -->
   <h1 class="title"><span id="title"></span></h1>
+
+  <!-- Birthday letter: sealed envelope -->
+  <div class="envelope-stage" id="envelope-stage">
+    <div class="envelope" id="envelope">
+      <div class="envelope__back"></div>
+      <div class="envelope__paper">For Enya &#9825;</div>
+      <div class="envelope__front"></div>
+      <div class="envelope__flap"></div>
+
+      <svg class="envelope__twine" viewBox="0 0 300 200" aria-hidden="true">
+        <g fill="none" stroke-linecap="round">
+          <g stroke="var(--twine-shadow)" stroke-width="4.5" transform="translate(1 1.5)">
+            <path d="M150 0 V200 M0 116 H300" />
+            <path d="M150 112 C120 70 78 68 86 96 C92 116 128 118 150 116" />
+            <path d="M150 112 C180 70 222 68 214 96 C208 116 172 118 150 116" />
+            <path d="M150 118 C136 146 122 162 110 186 M150 118 C166 146 180 164 194 186" />
+          </g>
+          <g stroke="var(--twine)" stroke-width="3.5">
+            <path d="M150 0 V200 M0 116 H300" />
+            <path d="M150 112 C120 70 78 68 86 96 C92 116 128 118 150 116" />
+            <path d="M150 112 C180 70 222 68 214 96 C208 116 172 118 150 116" />
+            <path d="M150 118 C136 146 122 162 110 186 M150 118 C166 146 180 164 194 186" />
+          </g>
+          <g stroke="var(--twine-shadow)" stroke-width="1.2" stroke-dasharray="2 3" opacity=".7">
+            <path d="M150 0 V200 M0 116 H300" />
+            <path d="M150 112 C120 70 78 68 86 96 C92 116 128 118 150 116" />
+            <path d="M150 112 C180 70 222 68 214 96 C208 116 172 118 150 116" />
+            <path d="M150 118 C136 146 122 162 110 186 M150 118 C166 146 180 164 194 186" />
+          </g>
+        </g>
+      </svg>
+
+      <button class="seal" id="seal" type="button" aria-label="Break the seal and open your letter">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <radialGradient id="wax" cx=".38" cy=".32" r=".75">
+              <stop offset="0" stop-color="#e2475a" />
+              <stop offset=".55" stop-color="var(--wax)" />
+              <stop offset="1" stop-color="var(--wax-dark)" />
+            </radialGradient>
+          </defs>
+          <path d="M98.4 50.0 Q98.4 50.0 95.9 55.0 Q93.4 59.9 92.8 65.1 Q92.3 70.4 88.4 73.9 Q84.5 77.5 81.7 81.9 Q78.9 86.3 74.3 88.6 Q69.8 91.0 64.8 92.0 Q59.8 93.0 54.9 96.1 Q50.0 99.2 45.1 96.1 Q40.2 92.9 35.2 92.1 Q30.1 91.3 26.3 87.9 Q22.5 84.5 18.9 81.0 Q15.4 77.6 12.1 73.7 Q8.7 69.9 6.1 65.3 Q3.4 60.6 3.0 55.3 Q2.6 50.0 4.4 45.0 Q6.3 40.0 7.0 34.9 Q7.8 29.7 10.0 24.8 Q12.2 19.9 16.6 16.7 Q21.0 13.6 25.6 11.2 Q30.2 8.8 34.7 5.8 Q39.2 2.7 44.6 2.9 Q50.0 3.0 55.3 3.1 Q60.7 3.3 65.1 6.3 Q69.6 9.3 73.7 12.2 Q77.7 15.2 81.2 18.8 Q84.7 22.3 87.7 26.3 Q90.8 30.4 93.7 34.9 Q96.5 39.4 97.4 44.7 Z" fill="url(#wax)" />
+          <circle cx="50" cy="50" r="31" fill="none" stroke="#8a111d" stroke-width="2.5" opacity=".75" />
+          <circle cx="50" cy="51" r="31" fill="none" stroke="#ef7782" stroke-width="1" opacity=".5" />
+          <path d="M50 69 C31 56 29 39 39 36 C45 34.5 49.5 39 50 44 C50.5 39 55 34.5 61 36 C71 39 69 56 50 69 Z"
+            fill="none" stroke="#7a0b17" stroke-width="3.2" stroke-linejoin="round" transform="translate(0 1.2)" />
+          <path d="M50 69 C31 56 29 39 39 36 C45 34.5 49.5 39 50 44 C50.5 39 55 34.5 61 36 C71 39 69 56 50 69 Z"
+            fill="none" stroke="#f08a93" stroke-width="2.2" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <p class="envelope__hint" id="envelope-hint">tap the seal &#9825;</p>
+  </div>
+
+  <!-- Birthday letter: opened -->
+  <div class="letter-view" id="letter-view" role="dialog" aria-modal="true" aria-label="Birthday letter for Enya" aria-hidden="true">
+    <div class="letter">
+      <svg class="letter__rose" viewBox="0 0 120 170" aria-hidden="true">
+        <defs>
+          <radialGradient id="rose-petal" cx=".45" cy=".35" r=".75">
+            <stop offset="0" stop-color="#e2384a" />
+            <stop offset=".6" stop-color="#b3172a" />
+            <stop offset="1" stop-color="#7a0b17" />
+          </radialGradient>
+        </defs>
+        <path d="M60 74 C58 102 63 132 57 168" stroke="#3d6b2a" stroke-width="4.5" fill="none" stroke-linecap="round" />
+        <path d="M59 114 C40 100 22 104 16 118 C34 125 48 122 59 114 Z" fill="#4c8a34" />
+        <path d="M58 114 C44 112 30 114 18 117" stroke="#2f5a21" stroke-width="1.2" fill="none" />
+        <path d="M61 138 C78 124 97 127 104 140 C88 148 72 146 61 138 Z" fill="#3f7a2c" />
+        <path d="M62 138 C76 136 90 137 103 140" stroke="#2f5a21" stroke-width="1.2" fill="none" />
+        <path d="M42 70 L60 84 L78 70 L67 75 L60 68 L53 75 Z" fill="#3d6b2a" />
+        <path d="M30 48 C26 22 50 10 62 16 C78 8 98 24 90 50 C86 70 70 80 60 80 C46 80 32 68 30 48 Z" fill="url(#rose-petal)" />
+        <path d="M30 46 C28 64 42 80 60 80 C50 72 44 60 46 44 C40 40 34 40 30 46 Z" fill="#a3142a" />
+        <path d="M90 46 C92 66 78 80 60 80 C72 72 78 58 74 42 C80 38 86 40 90 46 Z" fill="#94111f" />
+        <path d="M44 40 C46 26 74 24 76 40 C76 54 66 62 60 62 C52 62 44 54 44 40 Z" fill="#c92a3d" />
+        <path d="M50 38 C52 30 68 30 70 38 C70 46 62 50 58 46 C55 43 58 38 62 40" stroke="#7a0b17" stroke-width="2.2" fill="none" stroke-linecap="round" />
+        <path d="M47 30 C54 23 66 23 73 30" stroke="#f05a6a" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round" />
+      </svg>
+
+      <div class="letter__paper">
+        <button class="letter__close" id="letter-close" type="button" aria-label="Close the letter">&#10005;</button>
+        <div class="letter__body" tabindex="0">
+
+        <p class="letter__greeting">To my dearest love,</p>
+
+        <p>Happy Birthday Baby! You&rsquo;re finally legal now :) no more unc jokes because you&rsquo;re starting to become one now!! hehe</p>
+
+        <p>In all seriousness though, when I first met you, I was far from being the person you wanted me to be. I didn&rsquo;t know how to love, how important it is to show that love whether it&rsquo;s through homemade bouquets or handwritten letters, and overall how to be emotionally mature. Although there were so many flaws that I realized I had, I knew from the start that I wanted to be the person who loves you and cherishes you every day.</p>
+
+        <p>Thank you for letting me love you, for spending almost every day together, and for making me a better man. You have shown me how to truly love someone, and I will never ever forget that.</p>
+
+        <p>You have this ability to put a smile on someone&rsquo;s face, not just mine, but your friends&rsquo;, your family&rsquo;s, and everyone&rsquo;s around you. I am so so blessed and grateful to be your loving boyfriend <span class="letter__heart" aria-label="heart">&#9829;</span></p>
+
+        <p class="letter__closing">Cheers to another Birthday!! I love you so much, Enya Fung</p>
+
+        <p class="letter__signature">Bryan Lai</p>
+        </div>
+      </div>
+
+      <svg class="letter__petals" viewBox="0 0 140 120" aria-hidden="true">
+        <defs>
+          <radialGradient id="petal" cx=".35" cy=".4" r=".8">
+            <stop offset="0" stop-color="#e3394c" />
+            <stop offset=".7" stop-color="#b4182b" />
+            <stop offset="1" stop-color="#7d0c18" />
+          </radialGradient>
+          <path id="petal-shape" d="M0 0 C8 -15 30 -14 36 0 C30 13 9 15 0 0 Z" />
+        </defs>
+        <use href="#petal-shape" fill="url(#petal)" transform="translate(70 30) rotate(-25)" />
+        <use href="#petal-shape" fill="url(#petal)" transform="translate(30 70) rotate(40) scale(.9)" />
+        <use href="#petal-shape" fill="url(#petal)" transform="translate(88 78) rotate(150) scale(1.1)" />
+        <use href="#petal-shape" fill="url(#petal)" transform="translate(110 48) rotate(80) scale(.75)" />
+        <use href="#petal-shape" fill="url(#petal)" transform="translate(56 100) rotate(-70) scale(.8)" />
+      </svg>
+    </div>
+  </div>
+
+  <script src="js/letter.js"></script>
 </body>
 
 </html>
